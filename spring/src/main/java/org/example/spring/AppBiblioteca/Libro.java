@@ -16,8 +16,19 @@ public class Libro {
     @Column(name = "autor", nullable = false)
     private String autor;
 
-    @OneToOne(mappedBy = "idtitulo")
-    private Ejemplar ejemplar;
+    public Libro() {
+    }
+
+    public Libro(String titulo, String autor) {
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+
+    public Libro(Integer id, String titulo, String autor) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+    }
 
     public Integer getId() {
         return id;
@@ -43,12 +54,5 @@ public class Libro {
         this.autor = autor;
     }
 
-    public Ejemplar getEjemplar() {
-        return ejemplar;
-    }
-
-    public void setEjemplar(Ejemplar ejemplar) {
-        this.ejemplar = ejemplar;
-    }
 
 }
